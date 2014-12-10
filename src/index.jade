@@ -1,43 +1,65 @@
 doctype html
 html
 
+  //- Portfolio Site
+  //- By: Ariel Gelbard
+  //- Date: December 9, 2014
+
   head
 
   meta(charset="utf-8")
 
   meta(http-equiv="X-UA-Compatible", content="IE=edge")
 
-  title Hello World
+  title Ariel Gelbard
 
   meta(name="description", content="Hello World")
 
   meta(name="viewport", content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, minimal-ui")
 
+  link(rel="stylesheet", href="assets/styles/reset2.css", type="text/css")
+
   link(rel="stylesheet", href="assets/styles/main.css", type="text/css")
+
 
   body
 
-  div.wrapper
+  header
+    div.wrapper
+      div.menu
+        img(src='assets/images/menu.png' alt='Navigation Menu Button')
+      div.logo
+        h1 Ariel Gelbard
+      div.top
+        img(src='assets/images/arrow.png' alt='Back to Top of Page')
+      nav
+        ul
+          a(onclick='')
+            li Home
+          a(onclick='')
+            li Portfolio
+          a(onclick='')
+            li About Me
+          a(onclick='')
+            li Contact Me
+    div.space
 
-    header.header
+  div.main  
+  
+  footer
+    div.wrapper
+      div.social_media_footer
+        a.gh() Z
+          //- onclick='redirectTransition("http://github.com/akzes");') Z
+        a.ln() I
+          //- onclick='redirectTransition("http://www.linkedin.com/pub/ariel-gelbard/58/155/475");') I
+        a.tw() T
+          //- onclick='redirectTransition("https://twitter.com/arielgelbard");') T
+      div.footer_left
+        a(href='')
+        p Copyright Ariel Gelbard 2014
 
-      h1 Hello World
 
-      ul.nav
-
-        li: a(href="/") Home
-
-        li: a(href="/portfolio") Portfolio
-
-        li: a(href="/about") About Me
-
-        li: a(href="/contact") Contact Me
-
-    div.main
-
-    footer.footer
-
-      p Copyright &copy; 2014
 
   // -----------------------------
   // Templates

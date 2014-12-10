@@ -16,6 +16,7 @@ var rename    = require('gulp-rename');
 // ------------------------------------
 
 var paths     = {
+  fonts      : './src/assets/fonts/**/*',
   styles      : './src/assets/styles/**/*.less',
   scripts     : './src/assets/scripts/**/*.js',
   images      : './src/assets/images/**/*.{png,gif,jpeg,jpg}',
@@ -26,7 +27,7 @@ var paths     = {
 // Default Task
 // ------------------------------------
 
-gulp.task('default', ['images', 'scripts', 'styles', 'templates']);
+gulp.task('default', ['images', 'scripts', 'fonts', 'styles', 'templates']);
 
 // ------------------------------------
 // Watch Task
@@ -52,6 +53,19 @@ gulp.task('styles', function() {
     .pipe(less())
     .pipe(rename('main.css'))
     .pipe(gulp.dest('./public/assets/styles/'))
+  
+  gulp.src('./src/assets/styles/reset2.css')
+    .pipe(gulp.dest('./public/assets/styles/'))
+
+});
+
+// ------------------------------------
+// Fonts Task
+// ------------------------------------
+gulp.task('fonts', function() {
+
+  gulp.src(paths.fonts)
+    .pipe(gulp.dest('./public/assets/fonts/'))
 
 });
 
