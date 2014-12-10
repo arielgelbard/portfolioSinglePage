@@ -6,7 +6,8 @@
   "author": "Darcy Clarke",
   "main": "server.js",
   "dependencies": {
-    "express": "*"
+    "express": "*",
+    "gulp-less": "^2.0.1"
   },
   "devDependencies": {
     "gulp": "*",
