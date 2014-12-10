@@ -9,18 +9,21 @@
   <link rel="stylesheet" href="/assets/styles/reset2.css" type="text/css">
   <link rel="stylesheet" href="/assets/styles/main.css" type="text/css">
   <body></body>
+  <script>
+    document.body.style.display="none";
+    
+  </script>
   <header>
     <div class="wrapper">
-      <div class="menu"><img src="assets/images/menu.png" alt="Navigation Menu Button"></div>
-      <div class="logo">
-        <h1>Ariel Gelbard</h1>
-      </div>
-      <div class="top"><img src="assets/images/arrow.png" alt="Back to Top of Page"></div>
+      <div class="menu"><img src="/assets/images/menu.png" alt="Navigation Menu Button"></div>
+      <div class="logo"><a href="/">
+          <h1>Ariel Gelbard</h1></a></div>
+      <div class="top"><img src="/assets/images/arrow.png" alt="Back to Top of Page"></div>
       <nav>
-        <ul><a onclick="" href="/">
-            <li>Home</li></a><a onclick="" href="/portfolio">
-            <li>Portfolio</li></a><a onclick="" href="/about">
-            <li>About Me</li></a><a onclick="" href="/contact">
+        <ul><a href="/">
+            <li>Home</li></a><a href="/portfolio">
+            <li>Portfolio</li></a><a href="/about">
+            <li>About Me</li></a><a href="/contact">
             <li>Contact Me</li></a></ul>
       </nav>
     </div>
@@ -29,7 +32,7 @@
   <div class="main wrapper"></div>
   <footer>
     <div class="wrapper">
-      <div class="social_media_footer"><a class="gh">Z</a><a class="ln">I</a><a class="tw">T</a></div>
+      <div class="social_media_footer"><a href="http://github.com/arielgelbard" class="gh">Z</a><a href="http://www.linkedin.com/pub/ariel-gelbard/58/155/475" class="ln">I</a><a href="https://twitter.com/arielgelbard" class="tw">T</a></div>
       <div class="footer_left"><a href=""></a>
         <p>Copyright Ariel Gelbard 2014</p>
       </div>
@@ -64,7 +67,7 @@
   <script id="portfolioLanding" type="text/template">
     <div class="details">
       <div class="description">
-        <h1>{{title}}</h1><a onclick="redirectTransition(&quot;{{button1Link}}&quot;);">{{button1Title}}</a><a onclick="redirectTransition(&quot;{{button2Link}}&quot;);">{{button2Title}}</a>
+        <h1>{{title}}</h1><a href="{{button1Link}}">{{button1Title}}</a><a href="{{button2Link}}">{{button2Title}}</a>
         <h3>Role: {{role}}</h3>
         <p>{{content}}</p>
         <p>{{skills}}</p>

@@ -278,6 +278,8 @@ return temp;
         title: pPiece.title,
         button1Title:pPiece.button1Title,
         button2Title:pPiece.button2Title,
+        button1Link:pPiece.button1Link,
+        button2Link:pPiece.button2Link,
         role:pPiece.role,
         content:pPiece.content,
         skills:pPiece.skills,
@@ -389,33 +391,26 @@ return temp;
   // -----------------------------
   // Navigation Links
   // -----------------------------
-
   $(document).delegate('a', 'click', function(e) {
     e.preventDefault();
-    App.router.navigate($(this).attr('href'), { trigger: true });
 
+    var link=$(this).attr('href');
+    var externalLink=link.indexOf('http://');
+    
+    $('body').fadeOut(800,function(){
+      if (externalLink===-1){
+        App.router.navigate(link, { trigger: true });
+        $('body').hide();
+        $('body').fadeIn(800);      
+      }
+      else{
+        window.location.href = link;
+      }
+    });
   });
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// 
   //Onload, have webpage fade in
   $('body').hide();
   $('body').fadeIn(800);
@@ -450,9 +445,9 @@ return temp;
   });
 
   //redirects user to home page if logo is clicked
-  $(".logo").click(function(){
-    redirectTransition('index.php');
-  });
+  // $(".logo").click(function(){
+  //   redirectTransition('index.php');
+  // });
 
   //scrolls to top when 'back to top' arrow appears
   $(".top").click(function(){
@@ -466,8 +461,6 @@ return temp;
     var alert = $('.alert'); // alert div for show alert message
 
   var goodToGo=false;
-
-
 
 // when form submit occurs
     form.on('submit', function(e) {

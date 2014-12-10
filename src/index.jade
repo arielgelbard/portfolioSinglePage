@@ -19,28 +19,31 @@ html
 
   link(rel="stylesheet", href="/assets/styles/reset2.css", type="text/css")
 
-  link(rel="stylesheet", href="/assets/styles/main.css", type="text/css")
-
+  link(rel="stylesheet", href="/assets/styles/main.css", type="text/css")    
 
   body
+
+  script.
+    document.body.style.display="none";
 
   header
     div.wrapper
       div.menu
-        img(src='assets/images/menu.png' alt='Navigation Menu Button')
+        img(src='/assets/images/menu.png' alt='Navigation Menu Button')
       div.logo
-        h1 Ariel Gelbard
+        a(href='/')
+          h1 Ariel Gelbard
       div.top
-        img(src='assets/images/arrow.png' alt='Back to Top of Page')
+        img(src='/assets/images/arrow.png' alt='Back to Top of Page')
       nav
         ul
-          a(onclick='' href='/')
+          a(href='/')
             li Home
-          a(onclick='' href='/portfolio')
+          a(href='/portfolio')
             li Portfolio
-          a(onclick='' href='/about')
+          a(href='/about')
             li About Me
-          a(onclick='' href='/contact')
+          a(href='/contact')
             li Contact Me
     div.space
 
@@ -49,12 +52,9 @@ html
   footer
     div.wrapper
       div.social_media_footer
-        a.gh() Z
-          //- onclick='redirectTransition("http://github.com/akzes");') Z
-        a.ln() I
-          //- onclick='redirectTransition("http://www.linkedin.com/pub/ariel-gelbard/58/155/475");') I
-        a.tw() T
-          //- onclick='redirectTransition("https://twitter.com/arielgelbard");') T
+        a.gh(href='http://github.com/arielgelbard') Z
+        a.ln(href='http://www.linkedin.com/pub/ariel-gelbard/58/155/475') I
+        a.tw(href='https://twitter.com/arielgelbard') T
       div.footer_left
         a(href='')
         p Copyright Ariel Gelbard 2014
@@ -93,8 +93,8 @@ html
     div.details
       div(class='description')
         h1 {{title}}
-        a(onclick='redirectTransition("{{button1Link}}");') {{button1Title}}
-        a(onclick='redirectTransition("{{button2Link}}");') {{button2Title}}
+        a(href='{{button1Link}}') {{button1Title}}
+        a(href='{{button2Link}}') {{button2Title}}
         h3 Role: {{role}}
         p {{content}}
         p {{skills}}
