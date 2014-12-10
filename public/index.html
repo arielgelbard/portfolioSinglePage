@@ -6,8 +6,8 @@
   <title>Ariel Gelbard</title>
   <meta name="description" content="Hello World">
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, minimal-ui">
-  <link rel="stylesheet" href="assets/styles/reset2.css" type="text/css">
-  <link rel="stylesheet" href="assets/styles/main.css" type="text/css">
+  <link rel="stylesheet" href="/assets/styles/reset2.css" type="text/css">
+  <link rel="stylesheet" href="/assets/styles/main.css" type="text/css">
   <body></body>
   <header>
     <div class="wrapper">
@@ -53,23 +53,26 @@
       <h2> I create awesome, functional code that everyone can enjoy interacting with    </h2>
     </div>
   </script>
-  <script id="portfolio" type="text/template">{{#each piece}}
-    <div class="portfolioPiece"><a onclick="redirectTransition(&quot;portfolioDetail.php?id={{id}}&quot;);"></a><img src="images/{{profilePic}}" alt="">
-      <div class="hoverInfo">
-        <h1>{{title}}</h1>
-      </div>
-    </div>{{/each}}
+  <script id="portfolio" type="text/template">
+    <div class="landing">{{#each piece}}
+      <div class="portfolioPiece"><a href="/portfolioDetail/{{id}}"><img src="assets/images/pieces/{{profilePic}}" alt="">
+          <div class="hoverInfo">
+            <h1>{{title}}</h1>
+          </div></a></div>{{/each}}
+    </div>
   </script>
   <script id="portfolioLanding" type="text/template">
-    <div class="description">
-      <h1>{{title}}</h1><a onclick="redirectTransition(&quot;{{button1Link}}&quot;">{{button1Title}}</a><a onclick="redirectTransition(&quot;{{button2Link}}&quot;">{{button2Title}}</a>
-      <h3>Role: {{role}}</h3>
-      <p>{{content}}</p>
-      <p>{{skills}}</p>
-    </div>
-    <div class="pictures">
-      <div class="mobile"><img src="{{mobileScreenshot}}" alt=""></div>
-      <div class="desktop"><img src="{{desktopScreenshot}}" alt=""></div>
+    <div class="details">
+      <div class="description">
+        <h1>{{title}}</h1><a onclick="redirectTransition(&quot;{{button1Link}}&quot;);">{{button1Title}}</a><a onclick="redirectTransition(&quot;{{button2Link}}&quot;);">{{button2Title}}</a>
+        <h3>Role: {{role}}</h3>
+        <p>{{content}}</p>
+        <p>{{skills}}</p>
+      </div>
+      <div class="pictures">
+        <div class="mobile"><img src="{{mobileScreenshot}}" alt=""></div>
+        <div class="desktop"><img src="{{desktopScreenshot}}" alt=""></div>
+      </div>
     </div>
   </script>
   <script id="portfolioCase" type="text/template"></script>
@@ -122,5 +125,5 @@
   <!-- ------------------------------->
   <!-- Application-->
   <!-- ------------------------------->
-  <script type="text/javascript" src="assets/scripts/main.js"></script>
+  <script type="text/javascript" src="/assets/scripts/main.js"></script>
 </html>

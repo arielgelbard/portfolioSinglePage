@@ -17,9 +17,9 @@ html
 
   meta(name="viewport", content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, minimal-ui")
 
-  link(rel="stylesheet", href="assets/styles/reset2.css", type="text/css")
+  link(rel="stylesheet", href="/assets/styles/reset2.css", type="text/css")
 
-  link(rel="stylesheet", href="assets/styles/main.css", type="text/css")
+  link(rel="stylesheet", href="/assets/styles/main.css", type="text/css")
 
 
   body
@@ -80,27 +80,29 @@ html
       h2  I create awesome, functional code that everyone can enjoy interacting with    
 
   script#portfolio(type="text/template")
-    | {{#each piece}}
-    div(class='portfolioPiece')
-      a(onclick='redirectTransition("portfolioDetail.php?id={{id}}");')
-      img(src='images/{{profilePic}}' alt="")
-      div(class='hoverInfo')
-        h1 {{title}}
-    | {{/each}}
+    div.landing
+      | {{#each piece}}
+      div.portfolioPiece
+        a(href='/portfolioDetail/{{id}}')
+          img(src='assets/images/pieces/{{profilePic}}' alt="")
+          div.hoverInfo
+            h1 {{title}}
+      | {{/each}}
 
   script#portfolioLanding(type="text/template")
-    div(class='description')
-      h1 {{title}}
-      a(onclick='redirectTransition("{{button1Link}}"') {{button1Title}}
-      a(onclick='redirectTransition("{{button2Link}}"') {{button2Title}}
-      h3 Role: {{role}}
-      p {{content}}
-      p {{skills}}
-    div(class='pictures')
-      div(class='mobile')
-        img(src="{{mobileScreenshot}}" alt="")
-      div(class='desktop')
-        img(src="{{desktopScreenshot}}" alt="")
+    div.details
+      div(class='description')
+        h1 {{title}}
+        a(onclick='redirectTransition("{{button1Link}}");') {{button1Title}}
+        a(onclick='redirectTransition("{{button2Link}}");') {{button2Title}}
+        h3 Role: {{role}}
+        p {{content}}
+        p {{skills}}
+      div(class='pictures')
+        div(class='mobile')
+          img(src="{{mobileScreenshot}}" alt="")
+        div(class='desktop')
+          img(src="{{desktopScreenshot}}" alt="")
 
   script#portfolioCase(type="text/template")
 
@@ -155,4 +157,4 @@ html
   // Application
   // -----------------------------
 
-  script(type="text/javascript", src="assets/scripts/main.js")
+  script(type="text/javascript", src="/assets/scripts/main.js")
