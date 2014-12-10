@@ -34,17 +34,17 @@ html
         img(src='assets/images/arrow.png' alt='Back to Top of Page')
       nav
         ul
-          a(onclick='')
+          a(onclick='' href='/')
             li Home
-          a(onclick='')
+          a(onclick='' href='/portfolio')
             li Portfolio
-          a(onclick='')
+          a(onclick='' href='/about')
             li About Me
-          a(onclick='')
+          a(onclick='' href='/contact')
             li Contact Me
     div.space
 
-  div.main  
+  div.main.wrapper
   
   footer
     div.wrapper
@@ -65,17 +65,78 @@ html
   // Templates
   // -----------------------------
 
-  script#home(type="text/template").
-    <div class="page home">{{{content}}}</div>
+  script#home(type="text/template")
+    div.intro
+      h1 I am a Interactive Front End Developer
+      div.gicons
+        img(src="assets/images/fast.png" alt="")
+        h1 Fast
+      div.gicons
+        img(src="assets/images/reliable.png" alt="")
+        h1 Reliable            
+      div.gicons
+        img(src="assets/images/informed.png" alt="")
+        h1 Informed
+      h2  I create awesome, functional code that everyone can enjoy interacting with    
 
-  script#portfolio(type="text/template").
-    <div class="page portfolio">{{{content}}}</div>
+  script#portfolio(type="text/template")
+    | {{#each piece}}
+    div(class='portfolioPiece')
+      a(onclick='redirectTransition("portfolioDetail.php?id={{id}}");')
+      img(src='images/{{profilePic}}' alt="")
+      div(class='hoverInfo')
+        h1 {{title}}
+    | {{/each}}
 
-  script#about(type="text/template").
-    <div class="page about">{{{content}}}</div>
+  script#portfolioLanding(type="text/template")
+    div(class='description')
+      h1 {{title}}
+      a(onclick='redirectTransition("{{button1Link}}"') {{button1Title}}
+      a(onclick='redirectTransition("{{button2Link}}"') {{button2Title}}
+      h3 Role: {{role}}
+      p {{content}}
+      p {{skills}}
+    div(class='pictures')
+      div(class='mobile')
+        img(src="{{mobileScreenshot}}" alt="")
+      div(class='desktop')
+        img(src="{{desktopScreenshot}}" alt="")
 
-  script#contact(type="text/template").
-    <div class="page contact">{{{content}}}</div>
+  script#portfolioCase(type="text/template")
+
+  script#about(type="text/template")
+    div.about
+      div.about_left
+        img(src='assets/images/me.png' alt='Picture of Ariel Gelbard')
+        a(href='resume.pdf') View My Resume
+      div.about_right
+        p My name is Ariel Gelbard. I currently live in the Toronto area and I am a student in the Web Design and Interactive Media program at Humber College.
+        p I enjoy learning new programming languages and developing  amazing products. I always enjoy a challenging environment that can utilize my set of skills.
+        p You will see me outdoors usually relaxing or being adventerous on endevours such as hikes, snow and water skiing.
+        p Check me out on social media to learn more about me!
+
+  script#contact(type="text/template")
+    div(class='contact')
+      div(class='cLeft')
+        h1 Get in Touch!
+        div(class='cSocial')
+          p(class='socialico') V
+          p (416) 832-6858
+        div(class='cSocial')
+          p(class='socialico') M
+          a(href="#") ariel.gelbard@gmail.com
+        div(class='cSocial')
+          p(class='socialico')
+            img(src='assets/images/location.svg')
+          p I am local to the Toronto Area
+      div(class='contactForm')
+        h1 Contact Me Now!
+        form(action='' method='post' id='form')
+          input(type='text' id='contactfullname' name='fullname' placeholder='Name (Optional)')
+          input(type='text' id='contactemail' name='email' placeholder='Email' required)
+          textarea(placeholder='Message' id='contactmessage' name='message' required)
+          button(id='submit') Send
+      div(class='alert')
 
   // -----------------------------
   // Libraries

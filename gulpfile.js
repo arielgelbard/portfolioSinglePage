@@ -19,7 +19,7 @@ var paths     = {
   fonts      : './src/assets/fonts/**/*',
   styles      : './src/assets/styles/**/*.less',
   scripts     : './src/assets/scripts/**/*.js',
-  images      : './src/assets/images/**/*.{png,gif,jpeg,jpg}',
+  images      : './src/assets/images/**/*.{png,gif,jpeg,jpg,svg}',
   templates   : './src/**/*.jade'
 };
 

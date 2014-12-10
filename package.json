@@ -7,13 +7,13 @@
   "main": "server.js",
   "dependencies": {
     "express": "*",
-    "gulp-less": "^2.0.1"
   },
   "devDependencies": {
     "gulp": "*",
     "gulp-sass": "*",
     "gulp-imagemin": "*",
     "gulp-jade": "*",
-    "gulp-rename": "*"
+    "gulp-rename": "*",
+    "gulp-less": "^2.0.1"
   }
 }

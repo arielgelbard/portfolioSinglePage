@@ -17,16 +17,16 @@
       </div>
       <div class="top"><img src="assets/images/arrow.png" alt="Back to Top of Page"></div>
       <nav>
-        <ul><a onclick="">
-            <li>Home</li></a><a onclick="">
-            <li>Portfolio</li></a><a onclick="">
-            <li>About Me</li></a><a onclick="">
+        <ul><a onclick="" href="/">
+            <li>Home</li></a><a onclick="" href="/portfolio">
+            <li>Portfolio</li></a><a onclick="" href="/about">
+            <li>About Me</li></a><a onclick="" href="/contact">
             <li>Contact Me</li></a></ul>
       </nav>
     </div>
     <div class="space"></div>
   </header>
-  <div class="main"> </div>
+  <div class="main wrapper"></div>
   <footer>
     <div class="wrapper">
       <div class="social_media_footer"><a class="gh">Z</a><a class="ln">I</a><a class="tw">T</a></div>
@@ -39,20 +39,78 @@
   <!-- Templates-->
   <!-- ------------------------------->
   <script id="home" type="text/template">
-    <div class="page home">{{{content}}}</div>
-    
+    <div class="intro">
+      <h1>I am a Interactive Front End Developer</h1>
+      <div class="gicons"><img src="assets/images/fast.png" alt="">
+        <h1>Fast</h1>
+      </div>
+      <div class="gicons"><img src="assets/images/reliable.png" alt="">
+        <h1>Reliable            </h1>
+      </div>
+      <div class="gicons"><img src="assets/images/informed.png" alt="">
+        <h1>Informed</h1>
+      </div>
+      <h2> I create awesome, functional code that everyone can enjoy interacting with    </h2>
+    </div>
   </script>
-  <script id="portfolio" type="text/template">
-    <div class="page portfolio">{{{content}}}</div>
-    
+  <script id="portfolio" type="text/template">{{#each piece}}
+    <div class="portfolioPiece"><a onclick="redirectTransition(&quot;portfolioDetail.php?id={{id}}&quot;);"></a><img src="images/{{profilePic}}" alt="">
+      <div class="hoverInfo">
+        <h1>{{title}}</h1>
+      </div>
+    </div>{{/each}}
   </script>
+  <script id="portfolioLanding" type="text/template">
+    <div class="description">
+      <h1>{{title}}</h1><a onclick="redirectTransition(&quot;{{button1Link}}&quot;">{{button1Title}}</a><a onclick="redirectTransition(&quot;{{button2Link}}&quot;">{{button2Title}}</a>
+      <h3>Role: {{role}}</h3>
+      <p>{{content}}</p>
+      <p>{{skills}}</p>
+    </div>
+    <div class="pictures">
+      <div class="mobile"><img src="{{mobileScreenshot}}" alt=""></div>
+      <div class="desktop"><img src="{{desktopScreenshot}}" alt=""></div>
+    </div>
+  </script>
+  <script id="portfolioCase" type="text/template"></script>
   <script id="about" type="text/template">
-    <div class="page about">{{{content}}}</div>
-    
+    <div class="about">
+      <div class="about_left"><img src="assets/images/me.png" alt="Picture of Ariel Gelbard"><a href="resume.pdf">View My Resume</a></div>
+      <div class="about_right">
+        <p>My name is Ariel Gelbard. I currently live in the Toronto area and I am a student in the Web Design and Interactive Media program at Humber College.</p>
+        <p>I enjoy learning new programming languages and developing  amazing products. I always enjoy a challenging environment that can utilize my set of skills.</p>
+        <p>You will see me outdoors usually relaxing or being adventerous on endevours such as hikes, snow and water skiing.</p>
+        <p>Check me out on social media to learn more about me!</p>
+      </div>
+    </div>
   </script>
   <script id="contact" type="text/template">
-    <div class="page contact">{{{content}}}</div>
-    
+    <div class="contact">
+      <div class="cLeft">
+        <h1>Get in Touch!</h1>
+        <div class="cSocial">
+          <p class="socialico">V</p>
+          <p>(416) 832-6858</p>
+        </div>
+        <div class="cSocial">
+          <p class="socialico">M</p><a href="#">ariel.gelbard@gmail.com</a>
+        </div>
+        <div class="cSocial">
+          <p class="socialico"><img src="assets/images/location.svg"></p>
+          <p>I am local to the Toronto Area</p>
+        </div>
+      </div>
+      <div class="contactForm">
+        <h1>Contact Me Now!</h1>
+        <form action="" method="post" id="form">
+          <input type="text" id="contactfullname" name="fullname" placeholder="Name (Optional)">
+          <input type="text" id="contactemail" name="email" placeholder="Email" required>
+          <textarea placeholder="Message" id="contactmessage" name="message" required></textarea>
+          <button id="submit">Send</button>
+        </form>
+      </div>
+      <div class="alert"></div>
+    </div>
   </script>
   <!-- ------------------------------->
   <!-- Libraries-->
