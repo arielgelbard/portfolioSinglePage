@@ -31,19 +31,19 @@ html
       div.menu
         img(src='/assets/images/menu.png' alt='Navigation Menu Button')
       div.logo
-        a(href='/')
+        a(href='/' class="routeLink")
           h1 Ariel Gelbard
       div.top
         img(src='/assets/images/arrow.png' alt='Back to Top of Page')
       nav
         ul
-          a(href='/')
+          a(href='/' class="routeLink")
             li Home
-          a(href='/portfolio')
+          a(href='/portfolio' class="routeLink")
             li Portfolio
-          a(href='/about')
+          a(href='/about' class="routeLink")
             li About Me
-          a(href='/contact')
+          a(href='/contact' class="routeLink")
             li Contact Me
     div.space
 
@@ -69,13 +69,13 @@ html
     div.intro
       h1 I am a Interactive Front End Developer
       div.gicons
-        img(src="assets/images/fast.png" alt="")
+        img(src="/assets/images/fast.png" alt="")
         h1 Fast
       div.gicons
-        img(src="assets/images/reliable.png" alt="")
+        img(src="/assets/images/reliable.png" alt="")
         h1 Reliable            
       div.gicons
-        img(src="assets/images/informed.png" alt="")
+        img(src="/assets/images/informed.png" alt="")
         h1 Informed
       h2  I create awesome, functional code that everyone can enjoy interacting with    
 
@@ -83,8 +83,8 @@ html
     div.landing
       | {{#each piece}}
       div.portfolioPiece
-        a(href='/portfolioDetail/{{id}}')
-          img(src='assets/images/pieces/{{profilePic}}' alt="")
+        a(href='/portfolioDetail/{{id}}' class="routeLink")
+          img(src='/assets/images/pieces/{{profilePic}}' alt="")
           div.hoverInfo
             h1 {{title}}
       | {{/each}}
@@ -93,6 +93,7 @@ html
     div.details
       div(class='description')
         h1 {{title}}
+        | {{#if content}}
         a(href='{{button1Link}}') {{button1Title}}
         a(href='{{button2Link}}') {{button2Title}}
         h3 Role: {{role}}
@@ -103,6 +104,7 @@ html
           img(src="{{mobileScreenshot}}" alt="")
         div(class='desktop')
           img(src="{{desktopScreenshot}}" alt="")
+        | {{/if}}
 
   script#portfolioCase(type="text/template")
 
@@ -110,7 +112,7 @@ html
     div.about
       div.about_left
         img(src='assets/images/me.png' alt='Picture of Ariel Gelbard')
-        a(href='resume.pdf') View My Resume
+        a(href='assets/resume.pdf') View My Resume
       div.about_right
         p My name is Ariel Gelbard. I currently live in the Toronto area and I am a student in the Web Design and Interactive Media program at Humber College.
         p I enjoy learning new programming languages and developing  amazing products. I always enjoy a challenging environment that can utilize my set of skills.
@@ -126,10 +128,10 @@ html
           p (416) 832-6858
         div(class='cSocial')
           p(class='socialico') M
-          a(href="#") ariel.gelbard@gmail.com
+          a(href="mailto:ariel.gelbard@gmail.com") ariel.gelbard@gmail.com
         div(class='cSocial')
           p(class='socialico')
-            img(src='assets/images/location.svg')
+            img(src='/assets/images/location.svg')
           p I am local to the Toronto Area
       div(class='contactForm')
         h1 Contact Me Now!

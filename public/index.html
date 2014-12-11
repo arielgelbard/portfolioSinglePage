@@ -16,14 +16,14 @@
   <header>
     <div class="wrapper">
       <div class="menu"><img src="/assets/images/menu.png" alt="Navigation Menu Button"></div>
-      <div class="logo"><a href="/">
+      <div class="logo"><a href="/" class="routeLink">
           <h1>Ariel Gelbard</h1></a></div>
       <div class="top"><img src="/assets/images/arrow.png" alt="Back to Top of Page"></div>
       <nav>
-        <ul><a href="/">
-            <li>Home</li></a><a href="/portfolio">
-            <li>Portfolio</li></a><a href="/about">
-            <li>About Me</li></a><a href="/contact">
+        <ul><a href="/" class="routeLink">
+            <li>Home</li></a><a href="/portfolio" class="routeLink">
+            <li>Portfolio</li></a><a href="/about" class="routeLink">
+            <li>About Me</li></a><a href="/contact" class="routeLink">
             <li>Contact Me</li></a></ul>
       </nav>
     </div>
@@ -44,13 +44,13 @@
   <script id="home" type="text/template">
     <div class="intro">
       <h1>I am a Interactive Front End Developer</h1>
-      <div class="gicons"><img src="assets/images/fast.png" alt="">
+      <div class="gicons"><img src="/assets/images/fast.png" alt="">
         <h1>Fast</h1>
       </div>
-      <div class="gicons"><img src="assets/images/reliable.png" alt="">
+      <div class="gicons"><img src="/assets/images/reliable.png" alt="">
         <h1>Reliable            </h1>
       </div>
-      <div class="gicons"><img src="assets/images/informed.png" alt="">
+      <div class="gicons"><img src="/assets/images/informed.png" alt="">
         <h1>Informed</h1>
       </div>
       <h2> I create awesome, functional code that everyone can enjoy interacting with    </h2>
@@ -58,7 +58,7 @@
   </script>
   <script id="portfolio" type="text/template">
     <div class="landing">{{#each piece}}
-      <div class="portfolioPiece"><a href="/portfolioDetail/{{id}}"><img src="assets/images/pieces/{{profilePic}}" alt="">
+      <div class="portfolioPiece"><a href="/portfolioDetail/{{id}}" class="routeLink"><img src="/assets/images/pieces/{{profilePic}}" alt="">
           <div class="hoverInfo">
             <h1>{{title}}</h1>
           </div></a></div>{{/each}}
@@ -67,21 +67,21 @@
   <script id="portfolioLanding" type="text/template">
     <div class="details">
       <div class="description">
-        <h1>{{title}}</h1><a href="{{button1Link}}">{{button1Title}}</a><a href="{{button2Link}}">{{button2Title}}</a>
+        <h1>{{title}}</h1>{{#if content}}<a href="{{button1Link}}">{{button1Title}}</a><a href="{{button2Link}}">{{button2Title}}</a>
         <h3>Role: {{role}}</h3>
         <p>{{content}}</p>
         <p>{{skills}}</p>
       </div>
       <div class="pictures">
         <div class="mobile"><img src="{{mobileScreenshot}}" alt=""></div>
-        <div class="desktop"><img src="{{desktopScreenshot}}" alt=""></div>
+        <div class="desktop"><img src="{{desktopScreenshot}}" alt=""></div>{{/if}}
       </div>
     </div>
   </script>
   <script id="portfolioCase" type="text/template"></script>
   <script id="about" type="text/template">
     <div class="about">
-      <div class="about_left"><img src="assets/images/me.png" alt="Picture of Ariel Gelbard"><a href="resume.pdf">View My Resume</a></div>
+      <div class="about_left"><img src="assets/images/me.png" alt="Picture of Ariel Gelbard"><a href="assets/resume.pdf">View My Resume</a></div>
       <div class="about_right">
         <p>My name is Ariel Gelbard. I currently live in the Toronto area and I am a student in the Web Design and Interactive Media program at Humber College.</p>
         <p>I enjoy learning new programming languages and developing  amazing products. I always enjoy a challenging environment that can utilize my set of skills.</p>
@@ -99,10 +99,10 @@
           <p>(416) 832-6858</p>
         </div>
         <div class="cSocial">
-          <p class="socialico">M</p><a href="#">ariel.gelbard@gmail.com</a>
+          <p class="socialico">M</p><a href="mailto:ariel.gelbard@gmail.com">ariel.gelbard@gmail.com</a>
         </div>
         <div class="cSocial">
-          <p class="socialico"><img src="assets/images/location.svg"></p>
+          <p class="socialico"><img src="/assets/images/location.svg"></p>
           <p>I am local to the Toronto Area</p>
         </div>
       </div>
