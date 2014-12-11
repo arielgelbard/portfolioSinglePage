@@ -82,24 +82,31 @@ STYLE DECLERATIONS
 
 }
 
+*{
+  font-size: 16px;
+}
+
 h1{
-  font-size: 1.8em;
-  font-family: 'archisticoF';
-  font-weight: bold;
+  font-size: 2em;
+  font-family: "Helvetica", "Arial", sans-serif;
   color: white;
 }
 h2{
-  font-family: 'bitterF';
+  font-family: "Helvetica", "Arial", sans-serif;
   font-size: 1.5em;
   color: white;
 }
 a,p,h3{
-  font-family: 'fibel_nordF';
-  font-size: 1.9em;
+  font-family: "Georgia", "Times New Roman", Times, serif;//'fibel_nordF';
+  font-size: 1.5em;
   color: white;
   text-decoration: none;
   letter-spacing: 1.5px;
 }
+p{
+  // line-height: 25px;
+}
+
 
 /*==========================================================
 COLOUR STYLE DECLERATIONS
@@ -144,7 +151,7 @@ a{
 .formStyle(){
     color: @color;
     font-size: 30px;
-    font-family: 'fibel_nordF';
+    // font-family: 'fibel_nordF';
     padding-left: 10px;
     letter-spacing: 1.5px;
 }
@@ -199,6 +206,7 @@ header{
   margin-bottom: 400px;
   background-color: #eca15e;
   overflow: auto;
+  height: 80px;
   .logo{
     padding:10px 0;
     float: left;
@@ -217,6 +225,7 @@ header{
   }
   nav{  
     position: static !important;
+    overflow: hidden;
     padding: 5px 0;
     float: right;
     width: 75%;
@@ -224,7 +233,9 @@ header{
     margin-right: 2%;
     ul{
       width: 100%;
+      overflow: hidden;
       a{
+        overflow: hidden;
         display: inline-block;
         padding: 20px 4%;
         &:last-child{
@@ -393,13 +404,13 @@ PORTFOLIO PIECE DETAILS PAGE
     h3{
       margin-top: 60px;
       margin-left: 3%;
-      font-family: 'bitterF';
+      // font-family: 'bitterF';
       font-size: 1.5em;
     }
     p{
       margin-top: 30px;
       margin-left: 3%;
-      font-family: 'bitterF';
+      // font-family: 'bitterF';
       font-size: 1.5em;
     }
     a{
@@ -479,7 +490,7 @@ ABOUT PAGE
     float: right;
     p{
       margin-bottom: 40px;
-      font-family: 'bitterF';
+      // font-family: 'bitterF';
       font-size: 1.5em;
     }
   }
@@ -553,7 +564,7 @@ CONTACT ME PAGE
     button{
       border: none;
       color: white;
-      font-family: 'fibel_nordF';
+      // font-family: 'fibel_nordF';
       font-size: 1.8em;
       .button();
       width: 50%;

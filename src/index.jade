@@ -25,19 +25,19 @@ html
   header
     div.wrapper
       div.menu
-        img(src='/assets/images/menu.png' alt='Navigation Menu Button')
+        img(src="/assets/images/menu.png" alt="Navigation Menu Button")
       div.logo
-        a(href='/' class="routeLink")
+        a(href="/" class="routeLink")
           h1 Ariel Gelbard
       nav
         ul
-          a(href='/' class="routeLink")
+          a(href="/" class="routeLink")
             li Home
-          a(href='/portfolio' class="routeLink")
+          a(href="/portfolio" class="routeLink")
             li Portfolio
-          a(href='/about' class="routeLink")
+          a(href="/about" class="routeLink")
             li About Me
-          a(href='/contact' class="routeLink")
+          a(href="/contact" class="routeLink")
             li Contact Me
     div.space
 
@@ -48,11 +48,11 @@ html
   footer
     div.wrapper
       div.social_media_footer
-        a.gh(href='http://github.com/arielgelbard') Z
-        a.ln(href='http://www.linkedin.com/pub/ariel-gelbard/58/155/475') I
-        a.tw(href='https://twitter.com/arielgelbard') T
+        a.gh(href="http://github.com/arielgelbard") Z
+        a.ln(href="http://www.linkedin.com/pub/ariel-gelbard/58/155/475") I
+        a.tw(href="https://twitter.com/arielgelbard") T
       div.footer_left
-        a(href='')
+        a(href="")
         p Copyright Ariel Gelbard 2014
 
 
@@ -83,8 +83,8 @@ html
     div.landing
       | {{#each piece}}
       div.portfolioPiece
-        a(href='/portfolioDetail/{{id}}' class="routeLink")
-          img(src='/assets/images/pieces/{{profilePic}}' alt="")
+        a(href="/portfolioDetail/{{id}}" class="routeLink")
+          img(src="/assets/images/pieces/{{profilePic}}" alt="")
           div.hoverInfo
             h1 {{title}}
       | {{/each}}
@@ -94,18 +94,18 @@ html
   // ============================= 
   script#portfolioLanding(type="text/template")
     div.details
-      div(class='description')
+      div(class="description")
         h1 {{title}}
         | {{#if content}}
-        a(href='{{button1Link}}') {{button1Title}}
-        a(href='{{button2Link}}') {{button2Title}}
+        a(href="{{button1Link}}") {{button1Title}}
+        a(href="{{button2Link}}") {{button2Title}}
         h3 Role: {{role}}
         p {{content}}
         p {{skills}}
-      div(class='pictures')
-        div(class='mobile')
+      div(class="pictures")
+        div(class="mobile")
           img(src="{{mobileScreenshot}}" alt="")
-        div(class='desktop')
+        div(class="desktop")
           img(src="{{desktopScreenshot}}" alt="")
         | {{/if}}
 
@@ -115,8 +115,8 @@ html
   script#about(type="text/template")
     div.about
       div.about_left
-        img(src='assets/images/me.png' alt='Picture of Ariel Gelbard')
-        a(href='assets/resume.pdf') View My Resume
+        img(src="assets/images/me.png" alt="Picture of Ariel Gelbard")
+        a(href="assets/resume.pdf") View My Resume
       div.about_right
         p My name is Ariel Gelbard. I currently live in the Toronto area and I am a student in the Web Design and Interactive Media program at Humber College.
         p I enjoy learning new programming languages and developing  amazing products. I always enjoy a challenging environment that can utilize my set of skills.
@@ -127,27 +127,27 @@ html
   // Contact Page Template 
   // ============================= 
   script#contact(type="text/template")
-    div(class='contact')
-      div(class='cLeft')
+    div(class="contact")
+      div(class="cLeft")
         h1 Get in Touch!
-        div(class='cSocial')
-          p(class='socialico') V
+        div(class="cSocial")
+          p(class="socialico") V
           p (416) 832-6858
-        div(class='cSocial')
-          p(class='socialico') M
+        div(class="cSocial")
+          p(class="socialico") M
           a(href="mailto:ariel.gelbard@gmail.com") ariel.gelbard@gmail.com
-        div(class='cSocial')
-          p(class='socialico')
-            img(src='/assets/images/location.svg')
+        div(class="cSocial")
+          p(class="socialico")
+            img(src="/assets/images/location.svg")
           p I am local to the Toronto Area
-      div(class='contactForm')
+      div(class="contactForm")
         h1 Contact Me Now!
-        form(action='' method='post' id='form')
-          input(type='text' id='contactfullname' name='fullname' placeholder='Name')
-          input(type='text' id='contactemail' name='email' placeholder='Email' required)
-          textarea(placeholder='Message' id='contactmessage' name='message' required)
-          button(id='submit') Send
-        div(class='alert')
+        form(action="" method="post" id="form")
+          input(type="text" id="contactfullname" name="fullname" placeholder="Name")
+          input(type="text" id="contactemail" name="email" placeholder="Email" required)
+          textarea(placeholder="Message" id="contactmessage" name="message" required)
+          button(id="submit") Send
+        div(class="alert")
 
   // ============================= 
   // Libraries 
