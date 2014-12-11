@@ -25,13 +25,13 @@
   <header>
     <div class="wrapper">
       <div class="menu"><img src="/assets/images/menu.png" alt="Navigation Menu Button"></div>
-      <div class="logo"><a href="/" class="routeLink">
+      <div class="logo"><a href="/">
           <h1>Ariel Gelbard</h1></a></div>
       <nav>
-        <ul><a href="/" class="routeLink">
-            <li>Home</li></a><a href="/portfolio" class="routeLink">
-            <li>Portfolio</li></a><a href="/about" class="routeLink">
-            <li>About Me</li></a><a href="/contact" class="routeLink">
+        <ul><a href="/">
+            <li>Home</li></a><a href="/portfolio">
+            <li>Portfolio</li></a><a href="/about">
+            <li>About Me</li></a><a href="/contact">
             <li>Contact Me</li></a></ul>
       </nav>
     </div>
@@ -73,7 +73,7 @@
   <!-- ============================= -->
   <script id="portfolio" type="text/template">
     <div class="landing">{{#each piece}}
-      <div class="portfolioPiece"><a href="/portfolioDetail/{{id}}" class="routeLink"><img src="/assets/images/pieces/{{profilePic}}" alt="">
+      <div class="portfolioPiece"><a href="/portfolioDetail/{{id}}"><img src="/assets/images/pieces/{{profilePic}}" alt="">
           <div class="hoverInfo">
             <h1>{{title}}</h1>
           </div></a></div>{{/each}}

@@ -194,12 +194,8 @@ jQuery(function($) {
   // -----------------------------
   // Navigation Links
   // -----------------------------
-  $(document).delegate('a', 'click', function(e) {
-
+  $(document).delegate('a[href^="/"]', 'click', function(e) {
     var link=$(this).attr('href');
-
-    //If anchor tag has a class of routerlink so backbone can route it properly
-    if ($( this ).hasClass( "routeLink" )){
       e.preventDefault();
       //Animate to proper route
       $('body').fadeOut(800,function(){      
@@ -207,7 +203,6 @@ jQuery(function($) {
         $('body').hide();
         $('body').fadeIn(800);         
       });
-    }
   });
 
   // -----------------------------

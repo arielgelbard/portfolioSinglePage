@@ -27,17 +27,17 @@ html
       div.menu
         img(src='/assets/images/menu.png' alt='Navigation Menu Button')
       div.logo
-        a(href='/' class="routeLink")
+        a(href='/')
           h1 Ariel Gelbard
       nav
         ul
-          a(href='/' class="routeLink")
+          a(href='/')
             li Home
-          a(href='/portfolio' class="routeLink")
+          a(href='/portfolio')
             li Portfolio
-          a(href='/about' class="routeLink")
+          a(href='/about')
             li About Me
-          a(href='/contact' class="routeLink")
+          a(href='/contact')
             li Contact Me
     div.space
 
@@ -83,7 +83,7 @@ html
     div.landing
       | {{#each piece}}
       div.portfolioPiece
-        a(href='/portfolioDetail/{{id}}' class="routeLink")
+        a(href='/portfolioDetail/{{id}}')
           img(src='/assets/images/pieces/{{profilePic}}' alt="")
           div.hoverInfo
             h1 {{title}}
