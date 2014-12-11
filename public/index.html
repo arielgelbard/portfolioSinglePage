@@ -1,5 +1,10 @@
 <!DOCTYPE html>
-<html>
+<!-- ============================= -->
+<!-- Portfolio Site -->
+<!-- By: Ariel Gelbard -->
+<!-- Date: December 9, 2014 -->
+<!-- ============================= -->
+<html> 
   <head></head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,12 +18,15 @@
     document.body.style.display="none";
     
   </script>
+  <!-- ============================= -->
+  <!-- Main Outline -->
+  <!-- ============================= -->
+  <!-- Header -->
   <header>
     <div class="wrapper">
       <div class="menu"><img src="/assets/images/menu.png" alt="Navigation Menu Button"></div>
       <div class="logo"><a href="/" class="routeLink">
           <h1>Ariel Gelbard</h1></a></div>
-      <div class="top"><img src="/assets/images/arrow.png" alt="Back to Top of Page"></div>
       <nav>
         <ul><a href="/" class="routeLink">
             <li>Home</li></a><a href="/portfolio" class="routeLink">
@@ -29,7 +37,9 @@
     </div>
     <div class="space"></div>
   </header>
+  <!-- Main Content -->
   <div class="main wrapper"></div>
+  <!-- Footer -->
   <footer>
     <div class="wrapper">
       <div class="social_media_footer"><a href="http://github.com/arielgelbard" class="gh">Z</a><a href="http://www.linkedin.com/pub/ariel-gelbard/58/155/475" class="ln">I</a><a href="https://twitter.com/arielgelbard" class="tw">T</a></div>
@@ -38,9 +48,11 @@
       </div>
     </div>
   </footer>
-  <!-- ------------------------------->
-  <!-- Templates-->
-  <!-- ------------------------------->
+  <!-- ============================= -->
+  <!-- Templates: -->
+  <!-- ============================= -->
+  <!-- Home Page Template -->
+  <!-- ============================= -->
   <script id="home" type="text/template">
     <div class="intro">
       <h1>I am a Interactive Front End Developer</h1>
@@ -56,6 +68,9 @@
       <h2> I create awesome, functional code that everyone can enjoy interacting with    </h2>
     </div>
   </script>
+  <!-- ============================= -->
+  <!-- Portfolio Page Template -->
+  <!-- ============================= -->
   <script id="portfolio" type="text/template">
     <div class="landing">{{#each piece}}
       <div class="portfolioPiece"><a href="/portfolioDetail/{{id}}" class="routeLink"><img src="/assets/images/pieces/{{profilePic}}" alt="">
@@ -64,6 +79,9 @@
           </div></a></div>{{/each}}
     </div>
   </script>
+  <!-- ============================= -->
+  <!-- Portfolio Details Page Template -->
+  <!-- ============================= -->
   <script id="portfolioLanding" type="text/template">
     <div class="details">
       <div class="description">
@@ -78,7 +96,9 @@
       </div>
     </div>
   </script>
-  <script id="portfolioCase" type="text/template"></script>
+  <!-- ============================= -->
+  <!-- About Page Template -->
+  <!-- ============================= -->
   <script id="about" type="text/template">
     <div class="about">
       <div class="about_left"><img src="assets/images/me.png" alt="Picture of Ariel Gelbard"><a href="assets/resume.pdf">View My Resume</a></div>
@@ -90,6 +110,9 @@
       </div>
     </div>
   </script>
+  <!-- ============================= -->
+  <!-- Contact Page Template -->
+  <!-- ============================= -->
   <script id="contact" type="text/template">
     <div class="contact">
       <div class="cLeft">
@@ -109,24 +132,24 @@
       <div class="contactForm">
         <h1>Contact Me Now!</h1>
         <form action="" method="post" id="form">
-          <input type="text" id="contactfullname" name="fullname" placeholder="Name (Optional)">
+          <input type="text" id="contactfullname" name="fullname" placeholder="Name">
           <input type="text" id="contactemail" name="email" placeholder="Email" required>
           <textarea placeholder="Message" id="contactmessage" name="message" required></textarea>
           <button id="submit">Send</button>
         </form>
+        <div class="alert"></div>
       </div>
-      <div class="alert"></div>
     </div>
   </script>
-  <!-- ------------------------------->
-  <!-- Libraries-->
-  <!-- ------------------------------->
+  <!-- ============================= -->
+  <!-- Libraries -->
+  <!-- ============================= -->
   <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore.js"></script>
   <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone.js"></script>
   <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.js"></script>
-  <!-- ------------------------------->
-  <!-- Application-->
-  <!-- ------------------------------->
+  <!-- ============================= -->
+  <!-- Application -->
+  <!-- ============================= -->
   <script type="text/javascript" src="/assets/scripts/main.js"></script>
 </html>

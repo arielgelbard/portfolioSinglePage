@@ -1,31 +1,27 @@
 doctype html
-html
-
-  //- Portfolio Site
-  //- By: Ariel Gelbard
-  //- Date: December 9, 2014
-
+// ============================= 
+// Portfolio Site 
+// By: Ariel Gelbard 
+// Date: December 9, 2014 
+// ============================= 
+html  
   head
-
   meta(charset="utf-8")
-
   meta(http-equiv="X-UA-Compatible", content="IE=edge")
-
   title Ariel Gelbard
-
   meta(name="description", content="Ariel Gelbard's Portfolio")
-
   meta(name="viewport", content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, minimal-ui")
-
   link(rel="stylesheet", href="/assets/styles/reset2.css", type="text/css")
-
   link(rel="stylesheet", href="/assets/styles/main.css", type="text/css")    
-
   body
-
   script.
     document.body.style.display="none";
-
+  
+  // ============================= 
+  // Main Outline 
+  // ============================= 
+  
+  // Header 
   header
     div.wrapper
       div.menu
@@ -33,8 +29,6 @@ html
       div.logo
         a(href='/' class="routeLink")
           h1 Ariel Gelbard
-      div.top
-        img(src='/assets/images/arrow.png' alt='Back to Top of Page')
       nav
         ul
           a(href='/' class="routeLink")
@@ -47,8 +41,10 @@ html
             li Contact Me
     div.space
 
+  // Main Content 
   div.main.wrapper
-  
+
+  // Footer 
   footer
     div.wrapper
       div.social_media_footer
@@ -60,11 +56,12 @@ html
         p Copyright Ariel Gelbard 2014
 
 
+  // ============================= 
+  // Templates: 
 
-  // -----------------------------
-  // Templates
-  // -----------------------------
-
+  // ============================= 
+  // Home Page Template 
+  // ============================= 
   script#home(type="text/template")
     div.intro
       h1 I am a Interactive Front End Developer
@@ -78,7 +75,10 @@ html
         img(src="/assets/images/informed.png" alt="")
         h1 Informed
       h2  I create awesome, functional code that everyone can enjoy interacting with    
-
+  
+  // ============================= 
+  // Portfolio Page Template 
+  // ============================= 
   script#portfolio(type="text/template")
     div.landing
       | {{#each piece}}
@@ -89,6 +89,9 @@ html
             h1 {{title}}
       | {{/each}}
 
+  // ============================= 
+  // Portfolio Details Page Template 
+  // ============================= 
   script#portfolioLanding(type="text/template")
     div.details
       div(class='description')
@@ -106,8 +109,9 @@ html
           img(src="{{desktopScreenshot}}" alt="")
         | {{/if}}
 
-  script#portfolioCase(type="text/template")
-
+  // ============================= 
+  // About Page Template 
+  // ============================= 
   script#about(type="text/template")
     div.about
       div.about_left
@@ -119,6 +123,9 @@ html
         p You will see me outdoors usually relaxing or being adventerous on endevours such as hikes, snow and water skiing.
         p Check me out on social media to learn more about me!
 
+  // ============================= 
+  // Contact Page Template 
+  // ============================= 
   script#contact(type="text/template")
     div(class='contact')
       div(class='cLeft')
@@ -136,27 +143,21 @@ html
       div(class='contactForm')
         h1 Contact Me Now!
         form(action='' method='post' id='form')
-          input(type='text' id='contactfullname' name='fullname' placeholder='Name (Optional)')
+          input(type='text' id='contactfullname' name='fullname' placeholder='Name')
           input(type='text' id='contactemail' name='email' placeholder='Email' required)
           textarea(placeholder='Message' id='contactmessage' name='message' required)
           button(id='submit') Send
-      div(class='alert')
+        div(class='alert')
 
-  // -----------------------------
-  // Libraries
-  // -----------------------------
-
+  // ============================= 
+  // Libraries 
+  // ============================= 
   script(type="text/javascript", src="http://code.jquery.com/jquery-2.1.1.min.js")
-
   script(type="text/javascript", src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore.js")
-
   script(type="text/javascript", src="http://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone.js")
-
   script(type="text/javascript", src="http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.js")
 
-
-  // -----------------------------
-  // Application
-  // -----------------------------
-
+  // ============================= 
+  // Application 
+  // ============================= 
   script(type="text/javascript", src="/assets/scripts/main.js")
