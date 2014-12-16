@@ -28,9 +28,8 @@ html
       div.menu
         img(src="/assets/images/menu.png" alt="Navigation Menu Button")
       div.logo
-<<<<<<< HEAD
         a(href='/')
-          h1 Ariel Gelbard
+          h1 { Ariel Gelbard }
       nav
         ul
           a(href='/')
@@ -40,19 +39,6 @@ html
           a(href='/about')
             li About Me
           a(href='/contact')
-=======
-        a(href="/" class="routeLink")
-          h1 { Ariel Gelbard }
-      nav
-        ul
-          a(href="/" class="routeLink")
-            li Home
-          a(href="/portfolio" class="routeLink")
-            li Portfolio
-          a(href="/about" class="routeLink")
-            li About Me
-          a(href="/contact" class="routeLink")
->>>>>>> StyleChange
             li Contact Me
     div.space
 
@@ -97,19 +83,11 @@ html
   script#portfolio(type="text/template")
     div.landing
       | {{#each piece}}
-<<<<<<< HEAD
-      div.portfolioPiece
-        a(href='/portfolioDetail/{{id}}')
-          img(src='/assets/images/pieces/{{profilePic}}' alt="")
-          div.hoverInfo
-            h1 {{title}}
-=======
       a(href="/portfolioDetail/{{id}}" class="routeLink")
         img(src="/assets/images/pieces/{{profilePic}}" alt="")
         h1 {{title}}
         div.hoverInfo
           h1 {{skills}}
->>>>>>> StyleChange
       | {{/each}}
 
   // ============================= 
