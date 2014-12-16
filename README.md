@@ -24,7 +24,7 @@ Thanks for downloading and taking an interest in using and looking at my single 
 
 2. After it is installed, open the terminal and type ```cd```.
 
-3. After typing in ```cd```, drag and drop the ‘tic-tac-toe-sockets’ folder that you downloaded into the terminal window (ex. ```http://media.24ways.org/2013/coyier/drag-folder.gif```). Hit enter on the keyboard. (now you are in the folder.)
+3. After typing in ```cd```, drag and drop the ‘portfolioSingPage’ folder that you downloaded into the terminal window (ex. ```http://media.24ways.org/2013/coyier/drag-folder.gif```). Hit enter on the keyboard. (now you are in the folder.)
 
 4. Type in ```npm install``` and hit enter. Please wait a few minutes for the modules to download and install.
 
@@ -34,7 +34,7 @@ Thanks for downloading and taking an interest in using and looking at my single 
 
 	*while interacting with the app, node will log any changes that are made in the server in the terminal.
 
-7. To shut down the tic tac toe application, open up the minimized terminal. Now hit **control and c** at the same time on your keyboard.
+7. To shut down the single page portfolio application, open up the minimized terminal. Now hit **control and c** at the same time on your keyboard.
 
 
 ###Building HTML & CSS Instructions:

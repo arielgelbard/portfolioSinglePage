@@ -11,6 +11,7 @@ html
   title Ariel Gelbard
   meta(name="description", content="Ariel Gelbard's Portfolio")
   meta(name="viewport", content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, minimal-ui")
+  link(rel="shortcut icon" href="/assets/images/favicon.png")  
   link(rel="stylesheet", href="/assets/styles/reset2.css", type="text/css")
   link(rel="stylesheet", href="/assets/styles/main.css", type="text/css")    
   body
@@ -25,8 +26,9 @@ html
   header
     div.wrapper
       div.menu
-        img(src='/assets/images/menu.png' alt='Navigation Menu Button')
+        img(src="/assets/images/menu.png" alt="Navigation Menu Button")
       div.logo
+<<<<<<< HEAD
         a(href='/')
           h1 Ariel Gelbard
       nav
@@ -38,6 +40,19 @@ html
           a(href='/about')
             li About Me
           a(href='/contact')
+=======
+        a(href="/" class="routeLink")
+          h1 { Ariel Gelbard }
+      nav
+        ul
+          a(href="/" class="routeLink")
+            li Home
+          a(href="/portfolio" class="routeLink")
+            li Portfolio
+          a(href="/about" class="routeLink")
+            li About Me
+          a(href="/contact" class="routeLink")
+>>>>>>> StyleChange
             li Contact Me
     div.space
 
@@ -47,13 +62,13 @@ html
   // Footer 
   footer
     div.wrapper
-      div.social_media_footer
-        a.gh(href='http://github.com/arielgelbard') Z
-        a.ln(href='http://www.linkedin.com/pub/ariel-gelbard/58/155/475') I
-        a.tw(href='https://twitter.com/arielgelbard') T
-      div.footer_left
-        a(href='')
+      div.right
+        a.gh(href="http://github.com/arielgelbard") Z
+        a.ln(href="http://www.linkedin.com/pub/ariel-gelbard/58/155/475") I
+        a.tw(href="https://twitter.com/arielgelbard") T
+      div.center
         p Copyright Ariel Gelbard 2014
+      div.left
 
 
   // ============================= 
@@ -64,7 +79,7 @@ html
   // ============================= 
   script#home(type="text/template")
     div.intro
-      h1 I am a Interactive Front End Developer
+      h1 I am a Front End Developer
       div.gicons
         img(src="/assets/images/fast.png" alt="")
         h1 Fast
@@ -74,7 +89,7 @@ html
       div.gicons
         img(src="/assets/images/informed.png" alt="")
         h1 Informed
-      h2  I create awesome, functional code that everyone can enjoy interacting with    
+      h2  I create awesome, functional code that anyone can enjoy interacting with    
   
   // ============================= 
   // Portfolio Page Template 
@@ -82,11 +97,19 @@ html
   script#portfolio(type="text/template")
     div.landing
       | {{#each piece}}
+<<<<<<< HEAD
       div.portfolioPiece
         a(href='/portfolioDetail/{{id}}')
           img(src='/assets/images/pieces/{{profilePic}}' alt="")
           div.hoverInfo
             h1 {{title}}
+=======
+      a(href="/portfolioDetail/{{id}}" class="routeLink")
+        img(src="/assets/images/pieces/{{profilePic}}" alt="")
+        h1 {{title}}
+        div.hoverInfo
+          h1 {{skills}}
+>>>>>>> StyleChange
       | {{/each}}
 
   // ============================= 
@@ -94,60 +117,70 @@ html
   // ============================= 
   script#portfolioLanding(type="text/template")
     div.details
-      div(class='description')
+      div.description
         h1 {{title}}
         | {{#if content}}
-        a(href='{{button1Link}}') {{button1Title}}
-        a(href='{{button2Link}}') {{button2Title}}
-        h3 Role: {{role}}
+        | {{#if button1Link}}
+        a(href="{{button1Link}}") {{button1Title}}
+        | {{/if}}
+        | {{#if button2Link}}
+        a(href="{{button2Link}}") {{button2Title}}
+        | {{/if}}  
+        h3 Role: {{role}} 
         p {{content}}
         p {{skills}}
-      div(class='pictures')
-        div(class='mobile')
+      div.pictures
+        | {{#if mobileScreenshot}}
+        div(class="mobile")
           img(src="{{mobileScreenshot}}" alt="")
-        div(class='desktop')
-          img(src="{{desktopScreenshot}}" alt="")
+        | {{else}}
+        div(class="mobile" style="display:none;")
+          img(src="{{mobileScreenshot}}" alt="")
         | {{/if}}
+        div(class="desktop")
+          img(src="{{desktopScreenshot}}" alt="")
+        | {{/if}}   
 
   // ============================= 
   // About Page Template 
   // ============================= 
   script#about(type="text/template")
     div.about
-      div.about_left
-        img(src='assets/images/me.png' alt='Picture of Ariel Gelbard')
-        a(href='assets/resume.pdf') View My Resume
       div.about_right
-        p My name is Ariel Gelbard. I currently live in the Toronto area and I am a student in the Web Design and Interactive Media program at Humber College.
-        p I enjoy learning new programming languages and developing  amazing products. I always enjoy a challenging environment that can utilize my set of skills.
-        p You will see me outdoors usually relaxing or being adventerous on endevours such as hikes, snow and water skiing.
-        p Check me out on social media to learn more about me!
+        p I am a front end developer in the Toronto area specializing in websites and mobile applications.
+        p I provide customized web and mobile solutions using a variety programing languages, frameworks and tools to build effective and unique applications.
+        p Some of my hobbies are being outdoors, either relaxing or being adventerous on endevours such as hiking, skating, and snow skiing.
+        p Check me out on twitter and linkedin to learn more about me!
+      div.about_left
+        img(src="assets/images/me.png" alt="Picture of Ariel Gelbard")
+        a(href="assets/resume.pdf") View My Resume
+
 
   // ============================= 
   // Contact Page Template 
   // ============================= 
   script#contact(type="text/template")
-    div(class='contact')
-      div(class='cLeft')
+    div(class="contact")
+      div(class="left")
         h1 Get in Touch!
-        div(class='cSocial')
-          p(class='socialico') V
+        div(class="section")
+          p(class="socialico") V
           p (416) 832-6858
-        div(class='cSocial')
-          p(class='socialico') M
+        div(class="section")
+          p(class="socialico") M
           a(href="mailto:ariel.gelbard@gmail.com") ariel.gelbard@gmail.com
-        div(class='cSocial')
-          p(class='socialico')
-            img(src='/assets/images/location.svg')
-          p I am local to the Toronto Area
-      div(class='contactForm')
+        div(class="section")
+          p(class="socialico")
+            img(src="/assets/images/location.svg")
+          p Toronto, Canada
+      div(class="right")
         h1 Contact Me Now!
-        form(action='' method='post' id='form')
-          input(type='text' id='contactfullname' name='fullname' placeholder='Name')
-          input(type='text' id='contactemail' name='email' placeholder='Email' required)
-          textarea(placeholder='Message' id='contactmessage' name='message' required)
-          button(id='submit') Send
-        div(class='alert')
+        form(action="" method="post" id="form")
+          input(type="text" id="contactfullname" name="fullname" placeholder="Name")
+          input(type="text" id="contactemail" name="email" placeholder="Email" required)
+          textarea(placeholder="Message" id="contactmessage" name="message" required)
+          button(id="submit") Send
+        div(class="alert")
 
   // ============================= 
   // Libraries 
