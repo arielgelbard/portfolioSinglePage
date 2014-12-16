@@ -259,30 +259,22 @@ jQuery(function($) {
   // -----------------------------
   // Navigation Links
   // -----------------------------
-<<<<<<< HEAD
-  $(document).delegate('a[href^="/"]', 'click', function(e) {
-    var link=$(this).attr('href');
-=======
-  $(document).delegate("a", "click", function(e) {
-
+  $(document).delegate("a[href^="/"]", "click", function(e) {
     var link = $(this).attr("href");
 
     //If anchor tag has a class of routerlink so backbone can route it properly
-    if ($( this ).hasClass( "routeLink" )){
->>>>>>> StyleChange
-      e.preventDefault();
-      //Animate to proper route
-      $("body").fadeOut(800,function(){
-        if ( $(window).width() >= 750){
-          
-        }
-        else{
-          $("nav").slideToggle();
-        }
-        App.router.navigate(link, { trigger: true });
-        $("body").hide();
-        $("body").fadeIn(800);         
-      });
+    e.preventDefault();
+    //Animate to proper route
+    $("body").fadeOut(800,function(){
+      if ( $(window).width() >= 750){
+        
+      }
+      else{
+        $("nav").slideToggle();
+      }
+      App.router.navigate(link, { trigger: true });
+      $("body").hide();
+      $("body").fadeIn(800);         
   });
 
   // -----------------------------
