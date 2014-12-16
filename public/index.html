@@ -11,6 +11,7 @@
   <title>Ariel Gelbard</title>
   <meta name="description" content="Ariel Gelbard's Portfolio">
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, minimal-ui">
+  <link rel="shortcut icon" href="/assets/images/favicon.png">
   <link rel="stylesheet" href="/assets/styles/reset2.css" type="text/css">
   <link rel="stylesheet" href="/assets/styles/main.css" type="text/css">
   <body></body>
@@ -26,7 +27,7 @@
     <div class="wrapper">
       <div class="menu"><img src="/assets/images/menu.png" alt="Navigation Menu Button"></div>
       <div class="logo"><a href="/" class="routeLink">
-          <h1>Ariel Gelbard</h1></a></div>
+          <h1>{ Ariel Gelbard }</h1></a></div>
       <nav>
         <ul><a href="/" class="routeLink">
             <li>Home</li></a><a href="/portfolio" class="routeLink">
@@ -42,10 +43,11 @@
   <!-- Footer -->
   <footer>
     <div class="wrapper">
-      <div class="social_media_footer"><a href="http://github.com/arielgelbard" class="gh">Z</a><a href="http://www.linkedin.com/pub/ariel-gelbard/58/155/475" class="ln">I</a><a href="https://twitter.com/arielgelbard" class="tw">T</a></div>
-      <div class="footer_left"><a href=""></a>
+      <div class="right"><a href="http://github.com/arielgelbard" class="gh">Z</a><a href="http://www.linkedin.com/pub/ariel-gelbard/58/155/475" class="ln">I</a><a href="https://twitter.com/arielgelbard" class="tw">T</a></div>
+      <div class="center">
         <p>Copyright Ariel Gelbard 2014</p>
       </div>
+      <div class="left"></div>
     </div>
   </footer>
   <!-- ============================= -->
@@ -55,7 +57,7 @@
   <!-- ============================= -->
   <script id="home" type="text/template">
     <div class="intro">
-      <h1>I am a Interactive Front End Developer</h1>
+      <h1>I am a Front End Developer</h1>
       <div class="gicons"><img src="/assets/images/fast.png" alt="">
         <h1>Fast</h1>
       </div>
@@ -65,19 +67,18 @@
       <div class="gicons"><img src="/assets/images/informed.png" alt="">
         <h1>Informed</h1>
       </div>
-      <h2> I create awesome, functional code that everyone can enjoy interacting with    </h2>
+      <h2> I create awesome, functional code that anyone can enjoy interacting with    </h2>
     </div>
   </script>
   <!-- ============================= -->
   <!-- Portfolio Page Template -->
   <!-- ============================= -->
   <script id="portfolio" type="text/template">
-    <div class="landing">{{#each piece}}
-      <div class="portfolioPiece"><a href="/portfolioDetail/{{id}}" class="routeLink"><img src="/assets/images/pieces/{{profilePic}}" alt="">
-          <div class="hoverInfo">
-            <h1>{{title}}</h1>
-          </div></a></div>{{/each}}
-    </div>
+    <div class="landing">{{#each piece}}<a href="/portfolioDetail/{{id}}" class="routeLink"><img src="/assets/images/pieces/{{profilePic}}" alt="">
+        <h1>{{title}}</h1>
+        <div class="hoverInfo">
+          <h1>{{skills}}</h1>
+        </div></a>{{/each}}</div>
   </script>
   <!-- ============================= -->
   <!-- Portfolio Details Page Template -->
@@ -85,14 +86,17 @@
   <script id="portfolioLanding" type="text/template">
     <div class="details">
       <div class="description">
-        <h1>{{title}}</h1>{{#if content}}<a href="{{button1Link}}">{{button1Title}}</a><a href="{{button2Link}}">{{button2Title}}</a>
-        <h3>Role: {{role}}</h3>
+        <h1>{{title}}</h1>{{#if content}}
+        {{#if button1Link}}<a href="{{button1Link}}">{{button1Title}}</a>{{/if}}
+        {{#if button2Link}}<a href="{{button2Link}}">{{button2Title}}</a>{{/if}}  
+        <h3>Role: {{role}} </h3>
         <p>{{content}}</p>
         <p>{{skills}}</p>
       </div>
-      <div class="pictures">
-        <div class="mobile"><img src="{{mobileScreenshot}}" alt=""></div>
-        <div class="desktop"><img src="{{desktopScreenshot}}" alt=""></div>{{/if}}
+      <div class="pictures">{{#if mobileScreenshot}}
+        <div class="mobile"><img src="{{mobileScreenshot}}" alt=""></div>{{else}}
+        <div style="display:none;" class="mobile"><img src="{{mobileScreenshot}}" alt=""></div>{{/if}}
+        <div class="desktop"><img src="{{desktopScreenshot}}" alt=""></div>{{/if}}   
       </div>
     </div>
   </script>
@@ -101,13 +105,13 @@
   <!-- ============================= -->
   <script id="about" type="text/template">
     <div class="about">
-      <div class="about_left"><img src="assets/images/me.png" alt="Picture of Ariel Gelbard"><a href="assets/resume.pdf">View My Resume</a></div>
       <div class="about_right">
-        <p>My name is Ariel Gelbard. I currently live in the Toronto area and I am a student in the Web Design and Interactive Media program at Humber College.</p>
-        <p>I enjoy learning new programming languages and developing  amazing products. I always enjoy a challenging environment that can utilize my set of skills.</p>
-        <p>You will see me outdoors usually relaxing or being adventerous on endevours such as hikes, snow and water skiing.</p>
-        <p>Check me out on social media to learn more about me!</p>
+        <p>I am a front end developer in the Toronto area specializing in websites and mobile applications.</p>
+        <p>I provide customized web and mobile solutions using a variety programing languages, frameworks and tools to build effective and unique applications.</p>
+        <p>Some of my hobbies are being outdoors, either relaxing or being adventerous on endevours such as hiking, skating, and snow skiing.</p>
+        <p>Check me out on twitter and linkedin to learn more about me!</p>
       </div>
+      <div class="about_left"><img src="assets/images/me.png" alt="Picture of Ariel Gelbard"><a href="assets/resume.pdf">View My Resume</a></div>
     </div>
   </script>
   <!-- ============================= -->
@@ -115,21 +119,21 @@
   <!-- ============================= -->
   <script id="contact" type="text/template">
     <div class="contact">
-      <div class="cLeft">
+      <div class="left">
         <h1>Get in Touch!</h1>
-        <div class="cSocial">
+        <div class="section">
           <p class="socialico">V</p>
           <p>(416) 832-6858</p>
         </div>
-        <div class="cSocial">
+        <div class="section">
           <p class="socialico">M</p><a href="mailto:ariel.gelbard@gmail.com">ariel.gelbard@gmail.com</a>
         </div>
-        <div class="cSocial">
+        <div class="section">
           <p class="socialico"><img src="/assets/images/location.svg"></p>
-          <p>I am local to the Toronto Area</p>
+          <p>Toronto, Canada</p>
         </div>
       </div>
-      <div class="contactForm">
+      <div class="right">
         <h1>Contact Me Now!</h1>
         <form action="" method="post" id="form">
           <input type="text" id="contactfullname" name="fullname" placeholder="Name">
