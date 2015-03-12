@@ -20,8 +20,7 @@ var paths     = {
   styles      : './src/assets/styles/**/*.less',
   scripts     : './src/assets/scripts/**/*.js',
   images      : './src/assets/images/**/*.{png,gif,jpeg,jpg,svg}',
-  templates   : './src/**/*.jade',
-  other       : './src/assets/*.pdf'
+  templates   : './src/**/*.jade'
 };
 
 // ------------------------------------
@@ -90,9 +89,6 @@ gulp.task('images', function() {
   gulp.src(paths.images)
     .pipe(imagemin())
     .pipe(gulp.dest('./public/assets/images/'))
-
-  gulp.src(paths.other)
-    .pipe(gulp.dest('./public/assets/'))
 
 });
 
